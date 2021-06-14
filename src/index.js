@@ -1,14 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { FormContextProvider } from "./store/form-context";
+import { DataContextProvider } from "./store/data-context";
 import "bootstrap/dist/css/bootstrap.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <FormContextProvider>
-    <App />
-  </FormContextProvider>,
+  <DataContextProvider>
+    <FormContextProvider>
+      <App />
+    </FormContextProvider>
+  </DataContextProvider>,
   document.getElementById("root")
 );
 
