@@ -1,4 +1,6 @@
 import { Form } from "react-bootstrap";
+import FormContext from "../store/form-context";
+import { useContext } from "react";
 
 const LANGUAGE_DATA = [
   { name: "Javascript" },
@@ -10,17 +12,25 @@ const LANGUAGE_DATA = [
 ];
 
 const MyForm = () => {
+  const formCtx = useContext(FormContext);
+
   return (
     <Form>
       <Form.Group>
         <Form.Label>Your Name</Form.Label>
-        <Form.Control type='name' placeholder='Enter Your Name' />
+        <Form.Control
+          type='name'
+          placeholder='Enter Your Name'
+          onChange={formCtx.nameHandler}
+        />
       </Form.Group>
       <Form.Group>
         <Form.Label>Your Favorite Language</Form.Label>
-        <Form.Control as='select'>
+        <Form.Control as='select' onChange={formCtx.languageHandler}>
           {LANGUAGE_DATA.map((lang) => (
-            <option>{lang.name}</option>
+            <option key={lang.name} value={lang.name}>
+              {lang.name}
+            </option>
           ))}
         </Form.Control>
       </Form.Group>
