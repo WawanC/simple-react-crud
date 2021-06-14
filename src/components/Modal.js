@@ -12,7 +12,6 @@ const MyModal = (props) => {
 
   return (
     <Modal show={props.show} onHide={props.onClose} centered>
-      {console.log(modalBodyClassName)}
       <Modal.Header closeButton>
         <Modal.Title>Add New Data</Modal.Title>
       </Modal.Header>

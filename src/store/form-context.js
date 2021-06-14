@@ -25,7 +25,6 @@ export const FormContextProvider = (props) => {
   };
 
   const languageChangeHandler = (event) => {
-    console.log(event.target.value);
     setLanguageText(event.target.value);
   };
 
@@ -38,7 +37,6 @@ export const FormContextProvider = (props) => {
       setError(true);
       return;
     }
-    console.log("submitted !");
     setLoading(true);
     await sendNewData(nameText, languageText);
     setLoading(false);
