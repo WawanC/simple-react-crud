@@ -1,6 +1,8 @@
-const Table = () => {
+import { Table } from "react-bootstrap";
+
+const MyTable = () => {
   return (
-    <table className='table w-50 table-bordered text-center'>
+    <Table className='w-50 table-bordered text-center'>
       <thead className='table-dark'>
         <tr>
           <th>No</th>
@@ -15,8 +17,8 @@ const Table = () => {
           <td>Javascript</td>
         </tr>
       </tbody>
-    </table>
+    </Table>
   );
 };
 
-export default Table;
+export default MyTable;
