@@ -16,6 +16,11 @@ const MyForm = () => {
 
   return (
     <Form>
+      {formCtx.isError && (
+        <h6 className='text-danger text-center'>
+          You must fill all the required data !
+        </h6>
+      )}
       <Form.Group>
         <Form.Label>Your Name</Form.Label>
         <Form.Control
@@ -27,7 +32,10 @@ const MyForm = () => {
       <Form.Group>
         <Form.Label>Your Favorite Language</Form.Label>
         <Form.Control as='select' onChange={formCtx.languageHandler}>
-          {LANGUAGE_DATA.map((lang) => (
+          <option selected value='' hidden>
+            Select Your Language
+          </option>
+          {LANGUAGE_DATA.map((lang, idx) => (
             <option key={lang.name} value={lang.name}>
               {lang.name}
             </option>
