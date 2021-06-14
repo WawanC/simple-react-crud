@@ -1,4 +1,5 @@
 import { Modal, Button } from "react-bootstrap";
+import Form from "./Form";
 
 const MyModal = (props) => {
   return (
@@ -6,7 +7,9 @@ const MyModal = (props) => {
       <Modal.Header closeButton>
         <Modal.Title>Modal heading</Modal.Title>
       </Modal.Header>
-      <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+      <Modal.Body>
+        <Form />
+      </Modal.Body>
       <Modal.Footer>
         <Button variant='primary' onClick={props.onClose}>
           Save Changes
