@@ -32,7 +32,7 @@ const MyForm = () => {
       <Form.Group>
         <Form.Label>Your Favorite Language</Form.Label>
         <Form.Control as='select' onChange={formCtx.languageHandler}>
-          <option selected value='' hidden>
+          <option defaultValue='' value='' hidden>
             Select Your Language
           </option>
           {LANGUAGE_DATA.map((lang, idx) => (
